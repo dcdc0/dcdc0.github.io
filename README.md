@@ -1,8 +1,6 @@
 # dcdc0.github.io
-Personal website for testing
 
-# dcdc0.github.io
-Personal website for testing
+A basic personal website.
 
 ### Setup steps
 
