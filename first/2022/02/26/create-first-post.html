@@ -1,4 +1,41 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2022-02-27T19:39:14-08:00</updated><id>/feed.xml</id><title type="html">Daniel’s website</title><subtitle>This is a website for describing personal projects.</subtitle><entry><title type="html">Creating your first page</title><link href="/first/2022/02/26/create-first-post.html" rel="alternate" type="text/html" title="Creating your first page" /><published>2022-02-26T14:32:27-08:00</published><updated>2022-02-26T14:32:27-08:00</updated><id>/first/2022/02/26/create-first-post</id><content type="html" xml:base="/first/2022/02/26/create-first-post.html"><![CDATA[<p>This is the first post to a new website.
+<!DOCTYPE html>
+<html lang="en"><!-- for mathjax support -->
+
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    TeX: { equationNumbers: { autoNumber: "AMS" } }
+    });
+    </script>
+    <script type="text/javascript" async src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Daniel&#39;s website</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Creating your first page</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2022-02-26T14:32:27-08:00" itemprop="datePublished">Feb 26, 2022
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>This is the first post to a new website.
 I’m going to explain the steps that I took to create this website.</p>
 
 <p>The code used to generate this website is available on <a href="https://github.com/dcdc0/dcdc0.github.io">my github page</a>. It was written in markdown, built with <a href="https://jekyllrb.com/">jekyll</a>, and hosted on <a href="https://github.io">github</a>.</p>
@@ -105,4 +142,37 @@ You can run the command</p>
 </code></pre></div></div>
 
 <p>and then visit the local site <a href="127.0.0.1:4000">127.0.0.1:4000</a>. 
-Try adding new files to the <code class="language-plaintext highlighter-rouge">_post</code> folder, but try to follow the provided templates. When you want to inspect your changes, just run the previous command and visit the local page. This webpage isn’t available on the internet yet, so feel free to make changes.</p>]]></content><author><name></name></author><category term="first" /><summary type="html"><![CDATA[This is the first post to a new website. I’m going to explain the steps that I took to create this website. The code used to generate this website is available on my github page. It was written in markdown, built with jekyll, and hosted on github. Setup Github First, you’ll need a github account. If you don’t have one, create one. Make sure to keep track of your username and email. Create a new repository. Name the repo username.github.io, replacing username with your username. Go to your github settings page and select the tab “SSH and GPG keys”. To be able to make “push” changes to this repository from your local machine (using the command line) you’ll need to generate an ssh key. If you’ve previously created an ssh key, you can use that one. Otherwise, run the command and click enter to select the defaults. ssh-keygen -t ed25519 -C "your_email@example.com" Run the commands (from your home directory). eval "$(ssh-agent -s)" ssh-add ~/.ssh/id_ed25519 Run the command cat ~/.ssh/id_ed25519.pub and copy the output. On github, add a new ssh key by clicking the button and pasting the output from the previous command. If you’ve just installed git, you’ll need to set your identity. (This shows up in logs and is publicly available, so use a public-facing email address.) git config --global user.name "YOUR NAME" git config --global user.email "you_email@example.com" Now, working in a convenient directory of your choosing where you’ll store the actual project, run the command git clone https://github.com/username/username.github.io Enter that directory. Create a text file named index.html and give it the contents ‘Hello, World.’ You’ve now made a tiny website. To check it out, you’ll need to push the changes to github. To do this, we’ll first need to configure git to use your ssh key. To do so, run git remote set-url origin git@github.com:&lt;username&gt;/&lt;username&gt;.github.io.git Now, we need to tell git that you want to publish the work you’ve done. First, tell git to track the file with the command git add index.html then tell git that you’re ready to publish with the command git commit -am "Initial commit." Now, you can push your changes with the command git push Now, go to username.github.io and see your first webpage. Install Jekyll Your webpage exists now, but it’s not very interesting. A fairly simple way to generate more interesting websites is using Jekyll. Jekyll requires the Ruby language. Check that Ruby is installed by running ruby -v If you already have Ruby, great! Otherwise, follow instructions for your operating system here. After you have Ruby installed, you will also need Bundler to manage other dependencies. gem install bundler jekyll The gem command should have come with your Ruby installation. If it’s not there, try reopening your terminal. If you don’t have sudo privileges, you can try gem install --user-install bundler jekyll If you have trouble, you can then follow the guide here for your operating system. Using Jekyll to make a website Once you have Jekyll installed, use your terminal to navigate to your username.github.io repo. You can run the command jekyll new mysite This will create the necessary files in the mysite directory. You can start exploring the files in the mysite/_post directory and the mysite/_config.yml files. From the mysite directory, you can run bundle exec jekyll serve and then visit the local site 127.0.0.1:4000. Try adding new files to the _post folder, but try to follow the provided templates. When you want to inspect your changes, just run the previous command and visit the local page. This webpage isn’t available on the internet yet, so feel free to make changes.]]></summary></entry></feed>
+Try adding new files to the <code class="language-plaintext highlighter-rouge">_post</code> folder, but try to follow the provided templates. When you want to inspect your changes, just run the previous command and visit the local page. This webpage isn’t available on the internet yet, so feel free to make changes.</p>
+
+
+  </div><a class="u-url" href="/first/2022/02/26/create-first-post.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Daniel&#39;s website</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Daniel&#39;s website</li><li><a class="u-email" href="mailto:dc2627416@gmail.com">dc2627416@gmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/dcdc0"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">dcdc0</span></a></li><li><a href="https://www.twitter.com/"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username"></span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>This is a website for describing personal projects.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
