@@ -1,108 +1,128 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2022-02-27T19:39:14-08:00</updated><id>/feed.xml</id><title type="html">Daniel’s website</title><subtitle>This is a website for describing personal projects.</subtitle><entry><title type="html">Creating your first page</title><link href="/first/2022/02/26/create-first-post.html" rel="alternate" type="text/html" title="Creating your first page" /><published>2022-02-26T14:32:27-08:00</published><updated>2022-02-26T14:32:27-08:00</updated><id>/first/2022/02/26/create-first-post</id><content type="html" xml:base="/first/2022/02/26/create-first-post.html"><![CDATA[<p>This is the first post to a new website.
-I’m going to explain the steps that I took to create this website.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2022-03-03T23:11:26-08:00</updated><id>/feed.xml</id><title type="html">Daniel’s website</title><subtitle>This is a website for describing personal projects.</subtitle><entry><title type="html">Creating your first page</title><link href="/first/jekyll/github/2022/02/26/create-first-post.html" rel="alternate" type="text/html" title="Creating your first page" /><published>2022-02-26T14:32:27-08:00</published><updated>2022-02-26T14:32:27-08:00</updated><id>/first/jekyll/github/2022/02/26/create-first-post</id><content type="html" xml:base="/first/jekyll/github/2022/02/26/create-first-post.html">&lt;p&gt;This is the first post to a new website.
+I’m going to explain the steps that I took to create this website.&lt;/p&gt;
 
-<p>The code used to generate this website is available on <a href="https://github.com/dcdc0/dcdc0.github.io">my github page</a>. It was written in markdown, built with <a href="https://jekyllrb.com/">jekyll</a>, and hosted on <a href="https://github.io">github</a>.</p>
+&lt;p&gt;The code used to generate this website is available on &lt;a href=&quot;https://github.com/dcdc0/dcdc0.github.io&quot;&gt;my github page&lt;/a&gt;. It was written in markdown, built with &lt;a href=&quot;https://jekyllrb.com/&quot;&gt;jekyll&lt;/a&gt;, and hosted on &lt;a href=&quot;https://github.io&quot;&gt;github&lt;/a&gt;.&lt;/p&gt;
 
-<h2 id="setup">Setup</h2>
+&lt;h2 id=&quot;setup&quot;&gt;Setup&lt;/h2&gt;
 
-<h1 id="github">Github</h1>
+&lt;h1 id=&quot;github&quot;&gt;Github&lt;/h1&gt;
 
-<ol>
-  <li>First, you’ll need a github account. If you don’t have one, create one. Make sure to keep track of your username and email.</li>
-  <li>Create a new repository. Name the repo <code class="language-plaintext highlighter-rouge">username.github.io</code>, replacing <code class="language-plaintext highlighter-rouge">username</code> with your username.</li>
-  <li>
-    <p>Go to your github settings page and select the tab “SSH and GPG keys”. To be able to make “push” changes to this repository from your local machine (using the command line) you’ll need to generate an ssh key. If you’ve previously created an ssh key, you can use that one. Otherwise, run the command and click enter to select the defaults.</p>
+&lt;ol&gt;
+  &lt;li&gt;First, you’ll need a github account. If you don’t have one, create one. Make sure to keep track of your username and email.&lt;/li&gt;
+  &lt;li&gt;Create a new repository. Name the repo &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;username.github.io&lt;/code&gt;, replacing &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;username&lt;/code&gt; with your username.&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Go to your github settings page and select the tab “SSH and GPG keys”. To be able to make “push” changes to this repository from your local machine (using the command line) you’ll need to generate an ssh key. If you’ve previously created an ssh key, you can use that one. Otherwise, run the command and click enter to select the defaults.&lt;/p&gt;
 
-    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh-keygen -t ed25519 -C "your_email@example.com"
-</code></pre></div>    </div>
-  </li>
-  <li>
-    <p>Run the commands (from your home directory).</p>
+    &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ssh-keygen -t ed25519 -C &quot;your_email@example.com&quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Run the commands (from your home directory).&lt;/p&gt;
 
-    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>eval "$(ssh-agent -s)"
+    &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;eval &quot;$(ssh-agent -s)&quot;
 ssh-add ~/.ssh/id_ed25519
-</code></pre></div>    </div>
-  </li>
-  <li>Run the command <code class="language-plaintext highlighter-rouge">cat ~/.ssh/id_ed25519.pub</code> and copy the output. On github, add a new ssh key by clicking the button and pasting the output from the previous command.</li>
-  <li>
-    <p>If you’ve just installed git, you’ll need to set your identity. (This shows up in logs and is publicly available, so use a public-facing email address.)</p>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Run the command &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cat ~/.ssh/id_ed25519.pub&lt;/code&gt; and copy the output. On github, add a new ssh key by clicking the button and pasting the output from the previous command.&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;If you’ve just installed git, you’ll need to set your identity. (This shows up in logs and is publicly available, so use a public-facing email address.)&lt;/p&gt;
 
-    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> git config --global user.name "YOUR NAME"
- git config --global user.email "you_email@example.com"
-</code></pre></div>    </div>
-  </li>
-  <li>
-    <p>Now, working in a convenient directory of your choosing where you’ll store the actual project, run the command</p>
+    &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; git config --global user.name &quot;YOUR NAME&quot;
+ git config --global user.email &quot;you_email@example.com&quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Now, working in a convenient directory of your choosing where you’ll store the actual project, run the command&lt;/p&gt;
 
-    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    git clone https://github.com/username/username.github.io
-</code></pre></div>    </div>
-  </li>
-  <li>Enter that directory. Create a text file named <code class="language-plaintext highlighter-rouge">index.html</code> and give it the contents ‘Hello, World.’</li>
-  <li>
-    <p>You’ve now made a tiny website. To check it out, you’ll need to push the changes to github. To do this, we’ll first need to configure git to use your ssh key. To do so, run</p>
+    &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    git clone https://github.com/username/username.github.io
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Enter that directory. Create a text file named &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;index.html&lt;/code&gt; and give it the contents ‘Hello, World.’&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;You’ve now made a tiny website. To check it out, you’ll need to push the changes to github. To do this, we’ll first need to configure git to use your ssh key. To do so, run&lt;/p&gt;
 
-    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> git remote set-url origin git@github.com:&lt;username&gt;/&lt;username&gt;.github.io.git
-</code></pre></div>    </div>
-  </li>
-  <li>
-    <p>Now, we need to tell git that you want to publish the work you’ve done. First, tell git to track the file with the command</p>
+    &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; git remote set-url origin git@github.com:&amp;lt;username&amp;gt;/&amp;lt;username&amp;gt;.github.io.git
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Now, we need to tell git that you want to publish the work you’ve done. First, tell git to track the file with the command&lt;/p&gt;
 
-    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add index.html
-</code></pre></div>    </div>
+    &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git add index.html
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
 
-    <p>then tell git that you’re ready to publish with the command</p>
+    &lt;p&gt;then tell git that you’re ready to publish with the command&lt;/p&gt;
 
-    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git commit -am "Initial commit."
-</code></pre></div>    </div>
-  </li>
-  <li>
-    <p>Now, you can push your changes with the command</p>
+    &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git commit -am &quot;Initial commit.&quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Now, you can push your changes with the command&lt;/p&gt;
 
-    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git push
-</code></pre></div>    </div>
-  </li>
-  <li>Now, go to <code class="language-plaintext highlighter-rouge">username.github.io</code> and see your first webpage.</li>
-</ol>
+    &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git push
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Now, go to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;username.github.io&lt;/code&gt; and see your first webpage.&lt;/li&gt;
+&lt;/ol&gt;
 
-<h1 id="install-jekyll">Install Jekyll</h1>
+&lt;h1 id=&quot;install-jekyll&quot;&gt;Install Jekyll&lt;/h1&gt;
 
-<p>Your webpage exists now, but it’s not very interesting. A fairly simple way to generate more interesting websites is using Jekyll.</p>
+&lt;p&gt;Your webpage exists now, but it’s not very interesting. A fairly simple way to generate more interesting websites is using Jekyll.&lt;/p&gt;
 
-<ol>
-  <li>
-    <p>Jekyll requires the Ruby language. Check that Ruby is installed by running</p>
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Jekyll requires the Ruby language. Check that Ruby is installed by running&lt;/p&gt;
 
-    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ruby -v
-</code></pre></div>    </div>
-  </li>
-  <li>If you already have Ruby, great! Otherwise, follow instructions for your operating system <a href="https://www.ruby-lang.org/en/documentation/installation/">here</a>.</li>
-  <li>
-    <p>After you have Ruby installed, you will also need Bundler to manage other dependencies.</p>
+    &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ruby -v
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;If you already have Ruby, great! Otherwise, follow instructions for your operating system &lt;a href=&quot;https://www.ruby-lang.org/en/documentation/installation/&quot;&gt;here&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;After you have Ruby installed, you will also need Bundler to manage other dependencies.&lt;/p&gt;
 
-    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gem install bundler jekyll
-</code></pre></div>    </div>
+    &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;gem install bundler jekyll
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
 
-    <p>The <code class="language-plaintext highlighter-rouge">gem</code> command should have come with your Ruby installation. If it’s not there, try reopening your terminal.
-If you don’t have <code class="language-plaintext highlighter-rouge">sudo</code> privileges, you can try</p>
+    &lt;p&gt;The &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gem&lt;/code&gt; command should have come with your Ruby installation. If it’s not there, try reopening your terminal.
+If you don’t have &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;sudo&lt;/code&gt; privileges, you can try&lt;/p&gt;
 
-    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gem install --user-install bundler jekyll
-</code></pre></div>    </div>
-  </li>
-  <li>If you have trouble, you can then follow the guide <a href="https://jekyllrb.com/docs/installation/">here</a> for your operating system.</li>
-</ol>
+    &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;gem install --user-install bundler jekyll
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;If you have trouble, you can then follow the guide &lt;a href=&quot;https://jekyllrb.com/docs/installation/&quot;&gt;here&lt;/a&gt; for your operating system.&lt;/li&gt;
+&lt;/ol&gt;
 
-<h1 id="using-jekyll-to-make-a-website">Using Jekyll to make a website</h1>
+&lt;h1 id=&quot;using-jekyll-to-make-a-website&quot;&gt;Using Jekyll to make a website&lt;/h1&gt;
 
-<p>Once you have Jekyll installed, use your terminal to navigate to your <code class="language-plaintext highlighter-rouge">username.github.io</code> repo. 
-You can run the command</p>
+&lt;p&gt;Once you have Jekyll installed, use your terminal to navigate to your &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;username.github.io&lt;/code&gt; repo. 
+You can run the command&lt;/p&gt;
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>jekyll new mysite
-</code></pre></div></div>
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;jekyll new mysite
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-<p>This will create the necessary files in the <code class="language-plaintext highlighter-rouge">mysite</code> directory. You can start exploring the files in the <code class="language-plaintext highlighter-rouge">mysite/_post</code> directory and the <code class="language-plaintext highlighter-rouge">mysite/_config.yml</code> files. From the mysite directory, you can run</p>
+&lt;p&gt;This will create the necessary files in the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;mysite&lt;/code&gt; directory. You can start exploring the files in the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;mysite/_post&lt;/code&gt; directory and the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;mysite/_config.yml&lt;/code&gt; files. From the mysite directory, you can run&lt;/p&gt;
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    bundle exec jekyll serve
-</code></pre></div></div>
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;bundle exec jekyll serve
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-<p>and then visit the local site <a href="127.0.0.1:4000">127.0.0.1:4000</a>. 
-Try adding new files to the <code class="language-plaintext highlighter-rouge">_post</code> folder, but try to follow the provided templates. When you want to inspect your changes, just run the previous command and visit the local page. This webpage isn’t available on the internet yet, so feel free to make changes.</p>]]></content><author><name></name></author><category term="first" /><summary type="html"><![CDATA[This is the first post to a new website. I’m going to explain the steps that I took to create this website. The code used to generate this website is available on my github page. It was written in markdown, built with jekyll, and hosted on github. Setup Github First, you’ll need a github account. If you don’t have one, create one. Make sure to keep track of your username and email. Create a new repository. Name the repo username.github.io, replacing username with your username. Go to your github settings page and select the tab “SSH and GPG keys”. To be able to make “push” changes to this repository from your local machine (using the command line) you’ll need to generate an ssh key. If you’ve previously created an ssh key, you can use that one. Otherwise, run the command and click enter to select the defaults. ssh-keygen -t ed25519 -C "your_email@example.com" Run the commands (from your home directory). eval "$(ssh-agent -s)" ssh-add ~/.ssh/id_ed25519 Run the command cat ~/.ssh/id_ed25519.pub and copy the output. On github, add a new ssh key by clicking the button and pasting the output from the previous command. If you’ve just installed git, you’ll need to set your identity. (This shows up in logs and is publicly available, so use a public-facing email address.) git config --global user.name "YOUR NAME" git config --global user.email "you_email@example.com" Now, working in a convenient directory of your choosing where you’ll store the actual project, run the command git clone https://github.com/username/username.github.io Enter that directory. Create a text file named index.html and give it the contents ‘Hello, World.’ You’ve now made a tiny website. To check it out, you’ll need to push the changes to github. To do this, we’ll first need to configure git to use your ssh key. To do so, run git remote set-url origin git@github.com:&lt;username&gt;/&lt;username&gt;.github.io.git Now, we need to tell git that you want to publish the work you’ve done. First, tell git to track the file with the command git add index.html then tell git that you’re ready to publish with the command git commit -am "Initial commit." Now, you can push your changes with the command git push Now, go to username.github.io and see your first webpage. Install Jekyll Your webpage exists now, but it’s not very interesting. A fairly simple way to generate more interesting websites is using Jekyll. Jekyll requires the Ruby language. Check that Ruby is installed by running ruby -v If you already have Ruby, great! Otherwise, follow instructions for your operating system here. After you have Ruby installed, you will also need Bundler to manage other dependencies. gem install bundler jekyll The gem command should have come with your Ruby installation. If it’s not there, try reopening your terminal. If you don’t have sudo privileges, you can try gem install --user-install bundler jekyll If you have trouble, you can then follow the guide here for your operating system. Using Jekyll to make a website Once you have Jekyll installed, use your terminal to navigate to your username.github.io repo. You can run the command jekyll new mysite This will create the necessary files in the mysite directory. You can start exploring the files in the mysite/_post directory and the mysite/_config.yml files. From the mysite directory, you can run bundle exec jekyll serve and then visit the local site 127.0.0.1:4000. Try adding new files to the _post folder, but try to follow the provided templates. When you want to inspect your changes, just run the previous command and visit the local page. This webpage isn’t available on the internet yet, so feel free to make changes.]]></summary></entry></feed>
+&lt;p&gt;and then visit the local site &lt;a href=&quot;127.0.0.1:4000&quot;&gt;127.0.0.1:4000&lt;/a&gt;. 
+Try adding new files to the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_post&lt;/code&gt; folder, but try to follow the provided templates. When you want to inspect your changes, just run the previous command and visit the local page. This webpage isn’t available on the internet yet, so feel free to make changes.&lt;/p&gt;
+
+&lt;h1 id=&quot;adding-math-support&quot;&gt;Adding math support&lt;/h1&gt;
+
+&lt;p&gt;By default your page is currently using the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;minima&lt;/code&gt; theme. You’ll need to edit some features of the theme. Run the command&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;bundle show minima
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;to see where the theme is installed. From that location, copy the entire directory &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_includes&lt;/code&gt; into your &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;mysite&lt;/code&gt; directory.&lt;/p&gt;
+
+&lt;p&gt;Follow the instructions &lt;a href=&quot;http://webdocs.cs.ualberta.ca/~zichen2/blog/coding/setup/2019/02/17/how-to-add-mathjax-support-to-jekyll.html&quot;&gt;here&lt;/a&gt; to add mathjax to your page, except add the lines below to your `_includes/head.html’&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;{% if page.usemathjax %}
+&amp;lt;script src=&quot;https://polyfill.io/v3/polyfill.min.js?features=es6&quot;&amp;gt;&amp;lt;/script&amp;gt;
+&amp;lt;script id=&quot;MathJax-script&quot; async src=&quot;https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js&quot;&amp;gt;&amp;lt;/script&amp;gt;
+{% endif %}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Then code between &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$$&lt;/code&gt; is automatically converted to math. E.g. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$$y=mx+b$$&lt;/code&gt; becomes 
+\(y=mx+b.\)&lt;/p&gt;</content><author><name></name></author><category term="first" /><category term="jekyll" /><category term="github" /><summary type="html">This is the first post to a new website. I’m going to explain the steps that I took to create this website. The code used to generate this website is available on my github page. It was written in markdown, built with jekyll, and hosted on github. Setup Github First, you’ll need a github account. If you don’t have one, create one. Make sure to keep track of your username and email. Create a new repository. Name the repo username.github.io, replacing username with your username. Go to your github settings page and select the tab “SSH and GPG keys”. To be able to make “push” changes to this repository from your local machine (using the command line) you’ll need to generate an ssh key. If you’ve previously created an ssh key, you can use that one. Otherwise, run the command and click enter to select the defaults. ssh-keygen -t ed25519 -C &quot;your_email@example.com&quot; Run the commands (from your home directory). eval &quot;$(ssh-agent -s)&quot; ssh-add ~/.ssh/id_ed25519 Run the command cat ~/.ssh/id_ed25519.pub and copy the output. On github, add a new ssh key by clicking the button and pasting the output from the previous command. If you’ve just installed git, you’ll need to set your identity. (This shows up in logs and is publicly available, so use a public-facing email address.) git config --global user.name &quot;YOUR NAME&quot; git config --global user.email &quot;you_email@example.com&quot; Now, working in a convenient directory of your choosing where you’ll store the actual project, run the command git clone https://github.com/username/username.github.io Enter that directory. Create a text file named index.html and give it the contents ‘Hello, World.’ You’ve now made a tiny website. To check it out, you’ll need to push the changes to github. To do this, we’ll first need to configure git to use your ssh key. To do so, run git remote set-url origin git@github.com:&amp;lt;username&amp;gt;/&amp;lt;username&amp;gt;.github.io.git Now, we need to tell git that you want to publish the work you’ve done. First, tell git to track the file with the command git add index.html then tell git that you’re ready to publish with the command git commit -am &quot;Initial commit.&quot; Now, you can push your changes with the command git push Now, go to username.github.io and see your first webpage. Install Jekyll Your webpage exists now, but it’s not very interesting. A fairly simple way to generate more interesting websites is using Jekyll. Jekyll requires the Ruby language. Check that Ruby is installed by running ruby -v If you already have Ruby, great! Otherwise, follow instructions for your operating system here. After you have Ruby installed, you will also need Bundler to manage other dependencies. gem install bundler jekyll The gem command should have come with your Ruby installation. If it’s not there, try reopening your terminal. If you don’t have sudo privileges, you can try gem install --user-install bundler jekyll If you have trouble, you can then follow the guide here for your operating system. Using Jekyll to make a website Once you have Jekyll installed, use your terminal to navigate to your username.github.io repo. You can run the command jekyll new mysite This will create the necessary files in the mysite directory. You can start exploring the files in the mysite/_post directory and the mysite/_config.yml files. From the mysite directory, you can run bundle exec jekyll serve and then visit the local site 127.0.0.1:4000. Try adding new files to the _post folder, but try to follow the provided templates. When you want to inspect your changes, just run the previous command and visit the local page. This webpage isn’t available on the internet yet, so feel free to make changes. Adding math support By default your page is currently using the minima theme. You’ll need to edit some features of the theme. Run the command bundle show minima to see where the theme is installed. From that location, copy the entire directory _includes into your mysite directory. Follow the instructions here to add mathjax to your page, except add the lines below to your `_includes/head.html’ {% if page.usemathjax %} &amp;lt;script src=&quot;https://polyfill.io/v3/polyfill.min.js?features=es6&quot;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script id=&quot;MathJax-script&quot; async src=&quot;https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js&quot;&amp;gt;&amp;lt;/script&amp;gt; {% endif %} Then code between $$ is automatically converted to math. E.g. $$y=mx+b$$ becomes \(y=mx+b.\)</summary></entry></feed>
