@@ -2,7 +2,7 @@
 layout: post
 title:  "Creating your first page"
 date:   2022-02-26 14:32:27 -0800
-categories: first
+categories: first jekyll github
 usemathjax: true
 ---
 
@@ -86,13 +86,32 @@ You can run the command
 
 This will create the necessary files in the `mysite` directory. You can start exploring the files in the `mysite/_post` directory and the `mysite/_config.yml` files. From the mysite directory, you can run 
 
-        bundle exec jekyll serve
+    bundle exec jekyll serve
 
 and then visit the local site [127.0.0.1:4000][local]. 
 Try adding new files to the `_post` folder, but try to follow the provided templates. When you want to inspect your changes, just run the previous command and visit the local page. This webpage isn't available on the internet yet, so feel free to make changes. 
 
+# Adding math support
 
+By default your page is currently using the `minima` theme. You'll need to edit some features of the theme. Run the command
 
+    bundle show minima
+
+to see where the theme is installed. From that location, copy the entire directory `_includes` into your `mysite` directory.
+
+Follow the instructions [here][mathjax] to add mathjax to your page, except add the lines below to your `_includes/head.html'
+
+    {% raw %}
+    {% if page.usemathjax %}
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    {% endif %}
+    {% endraw %}
+
+Then code between `$$` is automatically converted to math. E.g. `$$y=mx+b$$` becomes 
+$$y=mx+b.$$
+
+[mathjax]: http://webdocs.cs.ualberta.ca/~zichen2/blog/coding/setup/2019/02/17/how-to-add-mathjax-support-to-jekyll.html
 [local]: 127.0.0.1:4000
 [ruby-install]: https://www.ruby-lang.org/en/documentation/installation/
 [jekyll]: https://jekyllrb.com/

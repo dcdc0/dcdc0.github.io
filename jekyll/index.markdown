@@ -5,4 +5,3 @@
 layout: home
 ---
 
-# Daniel's website.
